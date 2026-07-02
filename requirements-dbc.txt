@@ -5,7 +5,6 @@ charset-normalizer==3.4.7
 colorama==0.4.6
 comm==0.2.3
 cryptography==47.0.0
-dab_project @ file:///C:/Users/KEVIN%20GONZALEZ/Desktop/Cursos%20Kevin/udemy/malvik%20vaghadia/cicd_databricks_asset_bundles/dab_project/dist/dab_project-0.0.2-py3-none-any.whl#sha256=09d5fa7055c0728429f27b00e03c31879a0691a3b829ee058d56bc46675fe34a
 databricks-connect==15.4.21
 databricks-sdk==0.105.0
 debugpy==1.8.20
