@@ -1,0 +1,25 @@
+resources:
+    pipelines:
+        citibike_etl_pipeline:
+            id: b8debb5a-f57d-46f5-bfd6-6e202c29235c
+            pipeline_type: WORKSPACE
+            name: citibike_etl_pipeline
+            configuration:
+                catalog: "${var.catalog}"
+            libraries:
+                - notebook:
+                    path: ..\citibike_etl\dlt\01_bronze\01_bronze_citibike.ipynb
+                - notebook:
+                    path: ..\citibike_etl\dlt\02_silver\02_silver_citibike.ipynb
+                - notebook:
+                    path: ..\citibike_etl\dlt\03_gold\03_gold_citibike_daily_ride_summary.ipynb
+                - notebook:
+                    path: ..\citibike_etl\dlt\03_gold\03_gold_citibike_daily_station_performance.ipynb
+            schema: default
+            continuous: false
+            development: "${var.dev_flag}"
+            photon: true
+            channel: CURRENT
+            catalog: "${var.catalog}"
+            serverless: true
+            root_path: ..\citibike_etl\dlt
