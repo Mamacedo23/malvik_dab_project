@@ -75,5 +75,5 @@ jobs:
       - name: Deploy to prod
         run: |
           databricks bundle deploy \
-          --target prod
-          -- profile prod
+          --target prod \
+          --profile prod
