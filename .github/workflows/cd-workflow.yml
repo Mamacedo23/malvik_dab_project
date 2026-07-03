@@ -44,36 +44,36 @@ jobs:
           --target test \
           --profile test
 
-cd-deploy-prod:
-  name: Deploy to PROD
-  needs: cd-deploy-test
-  runs-on: ubuntu-latest
-  environment: prod
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-
-    - name: Install Databricks CLI
-      run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
-
-    - name: Install Dependencies
-      run: |
-        # write out the profile (here called "PROD")
-        cat <EOF > ~/.databrickscfg
-        [prod]
-        host = https://adb-7405605292374056.16.azuredatabricks.net/
-        azure_client_id = ${{ secrets.AZURE_CLIENT_ID }}
-        azure_tenant_id = ${{ secrets.AZURE_TENANT_ID }}
-        azure_client_secret = ${{ secrets.AZURE_CLIENT_SECRET }}
-        EOF
-        
-    - name: Deploy to prod
-      run: |
-        databricks bundle deploy \
-        --target prod
-        -- profile prod
+  cd-deploy-prod:
+    name: Deploy to PROD
+    needs: cd-deploy-test
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+  
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+  
+      - name: Install Databricks CLI
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+  
+      - name: Install Dependencies
+        run: |
+          # write out the profile (here called "PROD")
+          cat <EOF > ~/.databrickscfg
+          [prod]
+          host = https://adb-7405605292374056.16.azuredatabricks.net/
+          azure_client_id = ${{ secrets.AZURE_CLIENT_ID }}
+          azure_tenant_id = ${{ secrets.AZURE_TENANT_ID }}
+          azure_client_secret = ${{ secrets.AZURE_CLIENT_SECRET }}
+          EOF
+          
+      - name: Deploy to prod
+        run: |
+          databricks bundle deploy \
+          --target prod
+          -- profile prod
