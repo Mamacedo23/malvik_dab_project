@@ -30,7 +30,7 @@ jobs:
       - name: Configure Databricks
         run: |
           #v Write out the profile (here called "TEST")
-          cat <EOF > ~/.databrickscfg
+          cat <<EOF > ~/.databrickscfg
           [test]
           host = https://adb-7405605697332274.14.azuredatabricks.net/
           azure_client_id = ${{ secrets.AZURE_CLIENT_ID }}
@@ -64,7 +64,7 @@ jobs:
       - name: Install Dependencies
         run: |
           # write out the profile (here called "PROD")
-          cat <EOF > ~/.databrickscfg
+          cat <<EOF > ~/.databrickscfg
           [prod]
           host = https://adb-7405605292374056.16.azuredatabricks.net/
           azure_client_id = ${{ secrets.AZURE_CLIENT_ID }}
