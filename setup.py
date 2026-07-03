@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 # Llama a setup() para configurar el empaquetado del proyecto
 setup(
     name = "dab_project",
-    version = "0.0.2",
+    version = "0.0.3",
     description = "This contains the code in the ./src directory of the project",
     author = "Kevin Gonzales",
     # Busca automáticamente todos los subpaquetes (carpetas con __init__.py) dentro de ./src
