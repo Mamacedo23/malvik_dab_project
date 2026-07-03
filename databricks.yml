@@ -68,5 +68,7 @@ targets:
       dev_flag:
         default: false
     permissions:
-      - user_name: railgun@accelidol2gmail.onmicrosoft.com
+      - secret_principal_name: 15ffacc3-f808-435e-9669-33c33d3fbe4e
         level: CAN_MANAGE
+    run-as:
+      secret_principal_name: 15ffacc3-f808-435e-9669-33c33d3fbe4e
