@@ -3,6 +3,10 @@ resources:
     citibike_etl_pipeline_nb:
       name: citibike_etl_pipeline_nb
       tasks:
+        - task_key: 00_prepAmb
+          notebook_task:
+            notebook_path: ../citibike_etl/notebooks/00_prepAmb/00_prepAmb.ipynb
+            source: WORKSPACE
         - task_key: 00_whl_upload
           python_wheel_task:
             package_name: dab_project

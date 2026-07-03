@@ -50,8 +50,10 @@ targets:
       dev_flag:
         default: false
     permissions:
-      - user_name: railgun@accelidol2gmail.onmicrosoft.com
+      - service_principal_name: 331c0fd5-b6cc-48a9-bf9e-d4a512db970e
         level: CAN_MANAGE
+    run-as:
+      service_principal_name: 331c0fd5-b6cc-48a9-bf9e-d4a512db970e
   
   prod:
     mode: production
