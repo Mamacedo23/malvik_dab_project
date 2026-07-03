@@ -4,7 +4,7 @@ def timestamp_to_date_col(spark, df, timestamp_col, output_col):
     """
     Extracts the date from a timestamp column and adds it as a new column in the DataFrame.
     
-    Parameters:
+    Parametersxx:
         spark: Spark Session.
         df (DataFrame): Input PySpark DataFrame containing the timestamp.
         timestamp_col (str): The name of the column containing the timestamp.
